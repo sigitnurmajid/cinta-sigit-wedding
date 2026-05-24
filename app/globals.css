@@ -1,0 +1,437 @@
+/* ============================================================
+   Sigit & Cinta — Global styles + design tokens
+   ============================================================ */
+
+:root {
+  /* Candlelit palette — default */
+  --cream: #EDE8DF;
+  --cream-2: #E5DED1;
+  --off: #F5F2EC;
+  --ink: #2C2817;
+  --ink-soft: #4A4235;
+  --olive: #6B7A4A;
+  --gold: #C5B99A;
+
+  /* Type families (mirrors next/font CSS variables — see app/layout.tsx) */
+  --font-script: var(--font-pinyon), cursive;
+  --font-display: var(--font-italiana), serif;
+  --font-body: var(--font-cormorant), serif;
+  --font-ui: var(--font-inter), system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+img, svg { display: block; max-width: 100%; }
+
+/* Utility */
+.container { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+@media (min-width: 768px) {
+  .container { padding: 0 64px; }
+}
+
+/* Section paddings — used by all section components */
+.section {
+  padding: 90px 28px;
+}
+@media (min-width: 768px) {
+  .section { padding: 130px 100px; }
+}
+
+.section--dark {
+  background: var(--ink);
+  color: var(--cream);
+}
+.section--cream { background: var(--cream); }
+.section--cream2 { background: var(--cream-2); }
+
+/* Focus rings */
+:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 3px;
+}
+
+/* ---- Splash screen lock ---- */
+body.splash-open {
+  overflow: hidden; /* prevent all scrolling while splash is visible */
+}
+body.splash-open nav {
+  display: none !important; /* hide navbar during splash */
+}
+
+/* ============================================================
+   Mobile Responsive Utilities
+   ============================================================ */
+
+/* Smaller phones — tighten section padding */
+@media (max-width: 479px) {
+  .section {
+    padding: 64px 20px;
+  }
+}
+
+/* ---- Navigation ---- */
+.nav-links-desktop {
+  display: flex;
+  gap: 32px;
+}
+@media (max-width: 767px) {
+  .nav-links-desktop { display: none; }
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--cream);
+}
+@media (max-width: 767px) {
+  .nav-hamburger { display: flex; }
+}
+
+.nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  background: rgba(44, 40, 23, 0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.nav-drawer--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-drawer__close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  color: var(--cream);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+  padding: 4px 8px;
+}
+.nav-drawer__close:hover { opacity: 1; }
+
+.nav-drawer__link {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  color: var(--cream);
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity 0.15s;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 4px;
+}
+.nav-drawer__link:hover,
+.nav-drawer__link--active {
+  opacity: 1;
+  border-bottom-color: var(--gold);
+}
+
+/* ---- FAQ ---- */
+.faq-sidebar {
+  width: 110px;
+  background: var(--olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .faq-sidebar { display: none; }
+}
+
+.faq-body {
+  flex: 1;
+  padding: 120px 80px;
+}
+@media (max-width: 767px) {
+  .faq-body { padding: 64px 24px; }
+}
+@media (max-width: 479px) {
+  .faq-body { padding: 48px 20px; }
+}
+
+/* ---- Details page timeline ---- */
+.timeline-section {
+  padding: 0 100px 120px;
+  background: var(--cream);
+}
+@media (max-width: 767px) {
+  .timeline-section { padding: 0 24px 80px; }
+}
+@media (max-width: 479px) {
+  .timeline-section { padding: 0 20px 60px; }
+}
+
+.timeline-line {
+  position: absolute;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(197, 185, 154, 0.6);
+}
+@media (max-width: 767px) {
+  .timeline-line { display: none; }
+}
+
+.timeline-row {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  padding-bottom: 36px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .timeline-row {
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 28px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(197, 185, 154, 0.6);
+  }
+}
+
+.timeline-time {
+  width: 100px;
+  text-align: right;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--ink);
+  padding-top: 2px;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 767px) {
+  .timeline-time {
+    width: auto;
+    text-align: left;
+    font-size: 0.68rem;
+    font-family: var(--font-ui);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--olive);
+    padding-top: 0;
+  }
+}
+
+.timeline-dot {
+  width: 11px;
+  height: 11px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+  border: 2px solid var(--cream);
+  box-shadow: 0 0 0 1px var(--gold);
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .timeline-dot { display: none; }
+}
+
+/* ---- RSVP Form ---- */
+.rsvp-form-wrap {
+  background: var(--off);
+  border: 1px solid rgba(107, 122, 74, 0.25);
+  padding: 48px 56px;
+}
+@media (max-width: 767px) {
+  .rsvp-form-wrap { padding: 32px 24px; }
+}
+@media (max-width: 479px) {
+  .rsvp-form-wrap { padding: 24px 16px; }
+}
+
+.rsvp-attend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+@media (max-width: 479px) {
+  .rsvp-attend-grid { grid-template-columns: 1fr; }
+}
+
+.rsvp-guests-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 479px) {
+  .rsvp-guests-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Memory Lane ---- */
+.memory-center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--gold);
+  opacity: 0.55;
+  transform: translateX(-0.5px);
+}
+@media (max-width: 767px) {
+  .memory-center-line { display: none; }
+}
+
+.memory-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  gap: 40px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .memory-row {
+    flex-direction: column !important;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    gap: 16px;
+    padding-left: 24px;
+    border-left: 1px solid rgba(197, 185, 154, 0.55);
+  }
+}
+
+.memory-photo-side {
+  flex: 1;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .memory-photo-side {
+    justify-content: flex-start !important;
+    width: 100%;
+  }
+}
+
+.memory-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 3px solid var(--cream-2);
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .memory-dot {
+    left: -6px;
+    transform: none;
+    top: 2px;
+  }
+}
+
+.memory-text-side {
+  flex: 1;
+}
+@media (max-width: 767px) {
+  .memory-text-side {
+    text-align: left !important;
+    padding: 0 !important;
+    width: 100%;
+  }
+}
+
+/* ---- Venue ceremonies ---- */
+.venue-ceremonies {
+  padding: 0 100px 100px;
+  background: var(--cream);
+}
+@media (max-width: 767px) {
+  .venue-ceremonies { padding: 0 24px 64px; }
+}
+@media (max-width: 479px) {
+  .venue-ceremonies { padding: 0 20px 48px; }
+}
+
+/* ---- Footer ---- */
+.footer-section {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  color: var(--cream);
+}
+@media (min-width: 768px) {
+  .footer-section { min-height: 720px; }
+}
+
+/* ---- PageHeader ---- */
+.page-header {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: #1a1612;
+}
+@media (min-width: 768px) {
+  .page-header { height: 460px; }
+}
+
+/* ---- Welcome botanicals ---- */
+.botanical-left {
+  position: absolute;
+  left: 40px;
+  top: 60px;
+  opacity: 0.6;
+}
+.botanical-right {
+  position: absolute;
+  right: 40px;
+  bottom: 60px;
+  opacity: 0.6;
+  transform: scaleX(-1);
+}
+@media (max-width: 767px) {
+  .botanical-left {
+    left: -20px;
+    top: 20px;
+    opacity: 0.25;
+  }
+  .botanical-right {
+    right: -20px;
+    bottom: 20px;
+    opacity: 0.25;
+  }
+}
+
+/* ---- Hero bottom labels ---- */
+@media (max-width: 479px) {
+  .hero-label-date { display: none; }
+  .hero-label-location {
+    left: 28px !important;
+    right: 28px !important;
+    text-align: left !important;
+  }
+}
