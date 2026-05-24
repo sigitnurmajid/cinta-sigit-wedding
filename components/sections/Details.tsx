@@ -1,8 +1,5 @@
-import PageHeader from "@/components/PageHeader";
 import { site } from "@/content/site";
 import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline } from "@/components/atoms";
-
-export const metadata = { title: "Details — Sigit & Cinta" };
 
 const swatches = [
   { hex: "#EDE8DF", name: "Cream" },
@@ -19,16 +16,15 @@ const cards = [
   { kicker: "Photography", title: "Be Present", body: "We've asked our dear photographers to capture the day. We kindly invite you to leave the lens behind during the ceremony." },
 ];
 
-export default function DetailsPage() {
+export default function Details() {
   return (
-    <main>
-      <PageHeader image={site.images.details} eyebrow="The Day" title="Wedding Details" subtitle="Everything you need to know" />
-
-      <section className="section section--cream" style={{ textAlign: "center" }}>
+    <div id="details">
+      {/* Section header */}
+      <section className="section section--cream2" style={{ textAlign: "center" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <Eyebrow color="var(--olive)">Saturday</Eyebrow>
+          <Eyebrow color="var(--olive)">The Day</Eyebrow>
           <div style={{ height: 16 }} />
-          <Script size="clamp(3.6rem, 9vw, 5rem)" color="var(--ink)">21 June 2026</Script>
+          <Script size="clamp(3.4rem, 8vw, 4.8rem)" color="var(--ink)">Wedding Details</Script>
           <div style={{ height: 18 }} />
           <Hairline color="var(--gold)" width={50} />
           <div style={{ height: 24 }} />
@@ -36,6 +32,16 @@ export default function DetailsPage() {
         </div>
       </section>
 
+      {/* Date */}
+      <section className="section section--cream" style={{ textAlign: "center" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          <Eyebrow color="var(--olive)">Saturday</Eyebrow>
+          <div style={{ height: 16 }} />
+          <Script size="clamp(3.6rem, 9vw, 5rem)" color="var(--ink)">21 June 2026</Script>
+        </div>
+      </section>
+
+      {/* Timeline */}
       <section className="timeline-section">
         <div style={{ maxWidth: 760, margin: "0 auto", position: "relative" }}>
           <div className="timeline-line" aria-hidden />
@@ -53,6 +59,7 @@ export default function DetailsPage() {
         </div>
       </section>
 
+      {/* Dress code */}
       <section className="section section--dark" style={{ textAlign: "center" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <Eyebrow color="var(--gold)">A note on attire</Eyebrow>
@@ -77,6 +84,7 @@ export default function DetailsPage() {
         </div>
       </section>
 
+      {/* Notes cards */}
       <section className="section section--cream">
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24, maxWidth: 980, margin: "0 auto" }}>
           {cards.map(c => (
@@ -92,6 +100,6 @@ export default function DetailsPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

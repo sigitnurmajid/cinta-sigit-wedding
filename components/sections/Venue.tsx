@@ -1,8 +1,5 @@
-import PageHeader from "@/components/PageHeader";
 import { site } from "@/content/site";
 import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline } from "@/components/atoms";
-
-export const metadata = { title: "Venue — Sigit & Cinta" };
 
 const ceremonies = [
   { kicker: "Ceremony", name: "Akad Nikah", time: "09:00 — 11:00 WIB", place: "The Garden Hall" },
@@ -15,11 +12,23 @@ const travel = [
   { n: "03", t: "Lodging", d: "A small block of rooms has been held at Padma Hotel and Sanggabuana Resort. Mention 'Sigit & Cinta'." },
 ];
 
-export default function VenuePage() {
+export default function Venue() {
   return (
-    <main>
-      <PageHeader image={site.images.venue} eyebrow="The Place" title="Our Venue" subtitle={`${site.venue.name} · ${site.venue.city}`} />
+    <div id="venue">
+      {/* Section header */}
+      <section className="section section--dark" style={{ textAlign: "center" }}>
+        <div style={{ maxWidth: 620, margin: "0 auto" }}>
+          <Eyebrow color="var(--gold)">The Place</Eyebrow>
+          <div style={{ height: 18 }} />
+          <Script size="clamp(3.4rem, 8vw, 4.8rem)" color="var(--cream)">Our Venue</Script>
+          <div style={{ height: 18 }} />
+          <Hairline color="var(--gold)" width={44} />
+          <div style={{ height: 22 }} />
+          <SerifCaps size="0.85rem" tracking="0.35em" color="var(--gold)">{site.venue.name} · {site.venue.city}</SerifCaps>
+        </div>
+      </section>
 
+      {/* Intro */}
       <section className="section section--cream" style={{ textAlign: "center" }}>
         <div style={{ maxWidth: 620, margin: "0 auto" }}>
           <Eyebrow color="var(--olive)">A countryside sanctuary</Eyebrow>
@@ -32,6 +41,7 @@ export default function VenuePage() {
         </div>
       </section>
 
+      {/* Ceremonies */}
       <section className="venue-ceremonies">
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28, maxWidth: 980, margin: "0 auto" }}>
           {ceremonies.map(c => (
@@ -50,6 +60,7 @@ export default function VenuePage() {
         </div>
       </section>
 
+      {/* Gallery */}
       <section className="section section--cream2">
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow color="var(--olive)">A glimpse</Eyebrow>
@@ -63,6 +74,7 @@ export default function VenuePage() {
         </div>
       </section>
 
+      {/* Getting there */}
       <section className="section section--cream">
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 36 }}>
@@ -82,6 +94,6 @@ export default function VenuePage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }
