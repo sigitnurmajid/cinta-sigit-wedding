@@ -369,14 +369,14 @@ body.splash-open nav {
 
 /* ---- Venue ceremonies ---- */
 .venue-ceremonies {
-  padding: 0 100px 100px;
+  padding: 72px 100px 48px;
   background: var(--cream);
 }
 @media (max-width: 767px) {
-  .venue-ceremonies { padding: 0 24px 64px; }
+  .venue-ceremonies { padding: 52px 24px 36px; }
 }
 @media (max-width: 479px) {
-  .venue-ceremonies { padding: 0 20px 48px; }
+  .venue-ceremonies { padding: 40px 20px 28px; }
 }
 
 /* ---- Footer ---- */

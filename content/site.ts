@@ -18,14 +18,10 @@ export const site = {
     { bank: "Mandiri", number: "1234 5678 9012 3", name: "Sigit Nurmajid" },
   ],
   schedule: [
-    { time: "08:00", title: "Guests Arrive", desc: "Morning tea, refreshments, and welcome music in the verandah" },
-    { time: "09:00", title: "Akad Nikah", desc: "The sacred ceremony, attended by close family and dear friends" },
-    { time: "11:00", title: "Lunch Reception", desc: "A traditional Sundanese feast served in the courtyard" },
-    { time: "13:00", title: "Quiet Hours", desc: "Time to rest, photograph the grounds, or wander the gardens" },
-    { time: "18:00", title: "Resepsi Begins", desc: "Lanterns lit, cocktails served, the celebration is underway" },
-    { time: "19:30", title: "Dinner & Toasts", desc: "A four-course dinner under the stars, with words from those we love" },
-    { time: "21:00", title: "Live Music & Dancing", desc: "An acoustic ensemble takes the courtyard until late" },
-    { time: "22:00", title: "Farewell", desc: "A sparkler send-off and our heartfelt thanks" },
+    { time: "08:00", title: "Akad Nikah", desc: "The sacred ceremony, attended by close family and dear friends" },
+    { time: "10:00", title: "Guests Arrive", desc: "Morning tea, refreshments, and welcome music in the verandah" },
+    { time: "11:00", title: "Resepsi", desc: "A celebration of love with family and friends in the courtyard" },
+    { time: "14:00", title: "Farewell", desc: "Our heartfelt thanks as we begin our new journey together" },
   ],
   memories: [
     { date: "March 2020",    title: "First Meeting",   img: "/images/memory-1.jpg", side: "left"  as const }, // was: https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&w=600

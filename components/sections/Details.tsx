@@ -60,7 +60,7 @@ export default function Details() {
       </section>
 
       {/* Dress code */}
-      <section className="section section--dark" style={{ textAlign: "center" }}>
+      {/* <section className="section section--dark" style={{ textAlign: "center" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <Eyebrow color="var(--gold)">A note on attire</Eyebrow>
           <div style={{ height: 18 }} />
@@ -82,10 +82,10 @@ export default function Details() {
           <div style={{ height: 32 }} />
           <BodyItalic color="var(--gold)" size="0.92rem" style={{ opacity: 0.7 }}>Please refrain from pure white and stark black. Heels not recommended on the lawn — flats welcomed.</BodyItalic>
         </div>
-      </section>
+      </section> */}
 
       {/* Notes cards */}
-      <section className="section section--cream">
+      {/* <section className="section section--cream">
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24, maxWidth: 980, margin: "0 auto" }}>
           {cards.map(c => (
             <div key={c.title} style={{ padding: "32px 28px", background: "var(--off)", border: "1px solid rgba(107,122,74,0.2)", textAlign: "center" }}>
@@ -99,7 +99,7 @@ export default function Details() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

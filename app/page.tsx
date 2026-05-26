@@ -29,7 +29,7 @@ export default function HomePage() {
       <Details />
       <Gifts />
       <RSVPSection />
-      <FAQ />
+      {/* <FAQ /> */}
       <Footer />
     </main>
   );
