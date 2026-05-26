@@ -52,10 +52,14 @@ export const site = {
     ],
     gallery: [
       // Replace these with your real pre-wedding / wedding photos
-      { src: "/images/memory-1.jpg", caption: "First Meeting" },
-      { src: "/images/memory-2.jpg", caption: "Falling In Love" },
-      { src: "/images/memory-3.jpg", caption: "Our Adventures" },
-      { src: "/images/memory-4.jpg", caption: "The Proposal" },
+      { src: "/images/gallery-1.jpg", caption: "Vespa Senyum" },
+      { src: "/images/gallery-2.jpg", caption: "Sundul Gan" },
+      { src: "/images/gallery-3.jpg", caption: "Ngopi Masee" },
+      { src: "/images/gallery-4.jpg", caption: "Ambon Pica-pica" },
+      { src: "/images/gallery-5.jpg", caption: "Nonton Nesflis" },
+      { src: "/images/gallery-6.jpg", caption: "Coolbet" },
+      { src: "/images/gallery-7.jpg", caption: "Pizza Dulu" },
+      { src: "/images/gallery-8.jpg", caption: "Gosip Manies" },
     ],
     details: "/images/details.jpg", // was: https://images.pexels.com/photos/931158/pexels-photo-931158.jpeg?auto=compress&w=1600
     rsvp:    "/images/rsvp.jpg",    // was: https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&w=1600
