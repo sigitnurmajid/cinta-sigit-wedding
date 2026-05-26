@@ -52,18 +52,6 @@ export default function SplashScreen({ onEnter }: { onEnter: () => void }) {
         color: "var(--cream)",
       }}
     >
-      {recipient && (
-        <>
-          <BodyItalic size="0.92rem" color="var(--gold)" style={{ opacity: 0.75 }}>
-            Kepada Yth.
-          </BodyItalic>
-          <div style={{ height: 6 }} />
-          <SerifCaps size="1rem" tracking="0.22em" color="var(--cream)">
-            {recipient}
-          </SerifCaps>
-          <div style={{ height: 28 }} />
-        </>
-      )}
       <HeartMonogram color="var(--gold)" size={72} />
       <div style={{ height: 32 }} />
       <Eyebrow color="var(--gold)">The Wedding of</Eyebrow>
@@ -77,7 +65,19 @@ export default function SplashScreen({ onEnter }: { onEnter: () => void }) {
       <SerifCaps size="0.8rem" tracking="0.35em" color="var(--gold)">
         21 June 2026 · Bandung Barat
       </SerifCaps>
-      <div style={{ height: 56 }} />
+      <div style={{ height: recipient ? 32 : 56 }} />
+      {recipient && (
+        <>
+          <BodyItalic size="0.92rem" color="var(--gold)" style={{ opacity: 0.75 }}>
+            Kepada Yth.
+          </BodyItalic>
+          <div style={{ height: 6 }} />
+          <SerifCaps size="1rem" tracking="0.22em" color="var(--cream)">
+            {recipient}
+          </SerifCaps>
+          <div style={{ height: 28 }} />
+        </>
+      )}
       <button
         onClick={handleEnter}
         style={{

@@ -91,7 +91,7 @@ export function HeartMonogram({ color = "currentColor", size = 120 }: { color?: 
         fill="none" stroke={color} strokeWidth="1" opacity="0.85"
       />
       <text x="100" y="100" textAnchor="middle" style={{ fontFamily: "var(--font-script)", fontSize: 60, fill: color }}>
-        S<tspan dx="2" dy="0" style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 26 }}> &amp; </tspan>C
+        C<tspan dx="2" dy="0" style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 26 }}> &amp; </tspan>S
       </text>
     </svg>
   );

@@ -10,7 +10,7 @@ function Cell({ n, label }: { n: number; label: string }) {
         suppressHydrationWarning
         style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(2.4rem, 6vw, 3.6rem)",
+          fontSize: "clamp(1.5rem, 5.5vw, 3.6rem)",
           color: "var(--cream)",
           lineHeight: 1,
           fontVariantNumeric: "tabular-nums",
@@ -34,18 +34,18 @@ export default function Countdown() {
         <div style={{ height: 50 }} />
         <div style={{
           display: "flex",
-          gap: 14,
+          gap: "clamp(4px, 1.5vw, 14px)",
           justifyContent: "center",
-          padding: "clamp(20px, 4vw, 36px) clamp(12px, 3vw, 28px)",
+          padding: "clamp(16px, 3vw, 36px) clamp(6px, 1.5vw, 28px)",
           border: "1px solid rgba(197,185,154,0.35)",
         }}>
-          <Cell n={days} label="Days" />
+          <Cell n={days}    label="Days"  />
           <div style={{ width: 1, background: "rgba(197,185,154,0.2)" }} />
-          <Cell n={hours} label="Hours" />
+          <Cell n={hours}   label="Hours" />
           <div style={{ width: 1, background: "rgba(197,185,154,0.2)" }} />
-          <Cell n={minutes} label="Minutes" />
+          <Cell n={minutes} label="Mins"  />
           <div style={{ width: 1, background: "rgba(197,185,154,0.2)" }} />
-          <Cell n={seconds} label="Seconds" />
+          <Cell n={seconds} label="Secs"  />
         </div>
       </div>
     </section>
