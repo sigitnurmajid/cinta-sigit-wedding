@@ -17,7 +17,7 @@ export default function LoveStory() {
         <div style={{ height: 22 }} />
         <BodyItalic size="1.1rem">And so, beneath a golden sky and with trembling hands, a question was asked, and an answer given — yes, and yes again, for always.</BodyItalic>
         <div style={{ height: 44 }} />
-        <Script size="clamp(3rem, 7vw, 4rem)" color="var(--olive)">{site.groom} &amp; {site.bride}</Script>
+        <Script size="clamp(3rem, 7vw, 4rem)" color="var(--olive)">{site.bride} &amp; {site.groom}</Script>
       </div>
     </section>
   );

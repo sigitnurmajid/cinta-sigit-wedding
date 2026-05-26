@@ -10,13 +10,19 @@ export const site = {
     city: "Bandung Barat",
     mapUrl: "https://maps.google.com/?q=Gedung+Heroes+Bandung",
   },
-  contactPhone: "+62 812 3456 7890",
-  contactName: "Bunga",
+  contactPhone: "+62 851-6175-1612",
+  contactName: "Cinta",
   bankAccounts: [
-    { bank: "BCA", number: "1390 5421 66", name: "Sigit Nurmajid" },
-    { bank: "BCA", number: "1390 5421 88", name: "Hervina Cinta Rizki" },
-    { bank: "Mandiri", number: "1234 5678 9012 3", name: "Sigit Nurmajid" },
+    { bank: "BCA", number: "2781 8312 31", name: "Hervina Cinta Rizki" },
+    { bank: "Mandiri", number: "1320 0293 0421 0", name: "Sigit Nurmajid" },
   ],
+  giftAddress: {
+    name: "Hervina Cinta Rizki",
+    street: "Jl. Pasirkihiang No.68, RT.04/ RW.04, Mekarsari, Kec. Ngamprah",
+    city: "Bandung Barat",
+    province: "Jawa Barat",
+    postalCode: "40552",
+  },
   schedule: [
     { time: "08:00", title: "Akad Nikah", desc: "The sacred ceremony, attended by close family and dear friends" },
     { time: "10:00", title: "Guests Arrive", desc: "Morning tea, refreshments, and welcome music in the verandah" },
@@ -43,6 +49,13 @@ export const site = {
       "/images/gallery-1.jpg",      // was: https://images.pexels.com/photos/265947/pexels-photo-265947.jpeg?auto=compress&w=800
       "/images/gallery-2.jpg",      // was: https://images.pexels.com/photos/265856/pexels-photo-265856.jpeg?auto=compress&w=800
       "/images/gallery-3.jpg",      // was: https://images.pexels.com/photos/2909077/pexels-photo-2909077.jpeg?auto=compress&w=800
+    ],
+    gallery: [
+      // Replace these with your real pre-wedding / wedding photos
+      { src: "/images/memory-1.jpg", caption: "First Meeting" },
+      { src: "/images/memory-2.jpg", caption: "Falling In Love" },
+      { src: "/images/memory-3.jpg", caption: "Our Adventures" },
+      { src: "/images/memory-4.jpg", caption: "The Proposal" },
     ],
     details: "/images/details.jpg", // was: https://images.pexels.com/photos/931158/pexels-photo-931158.jpeg?auto=compress&w=1600
     rsvp:    "/images/rsvp.jpg",    // was: https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&w=1600

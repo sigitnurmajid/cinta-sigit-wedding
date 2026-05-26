@@ -5,7 +5,7 @@ export function Eyebrow({ children, color = "var(--ink)" }: { children: ReactNod
     <div style={{
       fontFamily: "var(--font-ui)",
       fontWeight: 300,
-      fontSize: "0.62rem",
+      fontSize: "0.72rem",
       letterSpacing: "0.42em",
       textTransform: "uppercase",
       color,

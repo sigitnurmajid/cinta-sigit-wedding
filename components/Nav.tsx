@@ -2,17 +2,18 @@
 import { useEffect, useState } from "react";
 import { Script } from "@/components/atoms";
 
-const links = [
+const links: { id: string; label: string; href?: string }[] = [
   { id: "home",    label: "HOME" },
   { id: "venue",   label: "VENUE" },
   { id: "details", label: "DETAILS" },
   { id: "rsvp",   label: "RSVP" },
+  { id: "gallery", label: "GALLERY", href: "/gallery" },
 ];
 
 const linkStyle: React.CSSProperties = {
   fontFamily: "var(--font-ui)",
   fontWeight: 300,
-  fontSize: "0.65rem",
+  fontSize: "0.75rem",
   letterSpacing: "0.32em",
   color: "var(--cream)",
   textDecoration: "none",
@@ -79,7 +80,7 @@ export default function Nav() {
         transition: "background 0.3s ease, backdrop-filter 0.3s ease",
       }}>
         <a href="#home" aria-label="Home" style={{ textDecoration: "none" }}>
-          <Script size="1.7rem" color="var(--cream)">S &amp; C</Script>
+          <Script size="1.7rem" color="var(--cream)">C &amp; S</Script>
         </a>
 
         {/* Desktop links */}
@@ -87,7 +88,7 @@ export default function Nav() {
           {links.map(l => {
             const active = activeSection === l.id;
             return (
-              <a key={l.id} href={`#${l.id}`} style={{
+              <a key={l.id} href={l.href ?? `#${l.id}`} style={{
                 ...linkStyle,
                 opacity: active ? 1 : 0.7,
                 paddingBottom: 4,
@@ -128,14 +129,14 @@ export default function Nav() {
           aria-label="Close navigation menu"
         >×</button>
 
-        <Script size="1.4rem" color="var(--gold)" style={{ opacity: 0.5 }}>S &amp; C</Script>
+        <Script size="1.4rem" color="var(--gold)" style={{ opacity: 0.5 }}>C &amp; S</Script>
 
         {links.map(l => {
           const active = activeSection === l.id;
           return (
             <a
               key={l.id}
-              href={`#${l.id}`}
+              href={l.href ?? `#${l.id}`}
               className={`nav-drawer__link${active ? " nav-drawer__link--active" : ""}`}
               onClick={() => setDrawerOpen(false)}
             >{l.label}</a>

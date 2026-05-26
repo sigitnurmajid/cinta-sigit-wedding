@@ -6,6 +6,7 @@ import Welcome from "@/components/sections/Welcome";
 import Countdown from "@/components/sections/Countdown";
 import LoveStory from "@/components/sections/LoveStory";
 import MemoryLane from "@/components/sections/MemoryLane";
+import Gallery from "@/components/sections/Gallery";
 import Venue from "@/components/sections/Venue";
 import Details from "@/components/sections/Details";
 import Gifts from "@/components/sections/Gifts";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Countdown />
       <LoveStory />
       <MemoryLane />
+      <Gallery />
       <Venue />
       <Details />
       <Gifts />

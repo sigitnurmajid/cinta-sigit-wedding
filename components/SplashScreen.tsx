@@ -7,7 +7,14 @@ import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline, HeartMonogram } from 
 export default function SplashScreen({ onEnter }: { onEnter: () => void }) {
   const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
+  const [recipient, setRecipient] = useState<string | null>(null);
   const dateLong = formatLongDate(site.weddingDate);
+
+  // Read recipient name from ?to= URL param
+  useEffect(() => {
+    const name = new URLSearchParams(window.location.search).get("to");
+    if (name) setRecipient(decodeURIComponent(name));
+  }, []);
 
   // Lock scroll + hide nav while splash is on screen
   useEffect(() => {
@@ -45,6 +52,18 @@ export default function SplashScreen({ onEnter }: { onEnter: () => void }) {
         color: "var(--cream)",
       }}
     >
+      {recipient && (
+        <>
+          <BodyItalic size="0.92rem" color="var(--gold)" style={{ opacity: 0.75 }}>
+            Kepada Yth.
+          </BodyItalic>
+          <div style={{ height: 6 }} />
+          <SerifCaps size="1rem" tracking="0.22em" color="var(--cream)">
+            {recipient}
+          </SerifCaps>
+          <div style={{ height: 28 }} />
+        </>
+      )}
       <HeartMonogram color="var(--gold)" size={72} />
       <div style={{ height: 32 }} />
       <Eyebrow color="var(--gold)">The Wedding of</Eyebrow>

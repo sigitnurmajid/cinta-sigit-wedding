@@ -237,7 +237,7 @@ body.splash-open nav {
   .timeline-time {
     width: auto;
     text-align: left;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-family: var(--font-ui);
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -377,6 +377,89 @@ body.splash-open nav {
 }
 @media (max-width: 479px) {
   .venue-ceremonies { padding: 40px 20px 28px; }
+}
+
+/* ---- Gallery page (standalone /gallery route) ---- */
+.gallery-item {
+  cursor: pointer;
+}
+.gallery-item:hover .gallery-item__img {
+  transform: scale(1.04);
+  filter: saturate(1) sepia(0) !important;
+}
+
+/* ---- Gallery marquee (home page section) ---- */
+.gallery-section {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+@media (max-width: 767px) {
+  .gallery-section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+}
+@media (max-width: 479px) {
+  .gallery-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.gallery-marquee {
+  display: flex;
+  gap: 12px;
+  /* 3 copies → one full cycle = shift left by 1/3 */
+  animation: marquee-scroll 55s linear infinite;
+  will-change: transform;
+}
+.gallery-marquee--reverse {
+  animation-direction: reverse;
+}
+.gallery-marquee:hover {
+  animation-play-state: paused;
+}
+
+.gallery-marquee__item {
+  flex-shrink: 0;
+  width: 220px;
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(20,15,8,0.14);
+}
+
+.gallery-marquee__item:hover .gallery-marquee__img {
+  filter: saturate(1) sepia(0) !important;
+  transform: scale(1.04);
+}
+
+/* Tablet */
+@media (max-width: 767px) {
+  .gallery-marquee__item {
+    width: 160px;
+    height: 195px;
+  }
+  .gallery-marquee {
+    gap: 10px;
+    animation-duration: 42s;
+  }
+}
+
+/* Mobile */
+@media (max-width: 479px) {
+  .gallery-marquee__item {
+    width: 130px;
+    height: 158px;
+  }
+  .gallery-marquee {
+    gap: 8px;
+    animation-duration: 34s;
+  }
 }
 
 /* ---- Footer ---- */

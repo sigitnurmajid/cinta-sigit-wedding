@@ -42,7 +42,7 @@ export default function Gifts() {
               textAlign: "left",
             }}>
               <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: "0.7rem", letterSpacing: "0.3em", color: "var(--gold)" }}>{a.bank}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: "0.78rem", letterSpacing: "0.3em", color: "var(--gold)" }}>{a.bank}</div>
                 <div style={{ height: 6 }} />
                 <div style={{ fontFamily: "var(--font-body)", fontSize: "1.15rem", color: "var(--cream)", fontVariantNumeric: "tabular-nums" }}>{a.number}</div>
                 <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.85rem", color: "var(--gold)", opacity: 0.8 }}>{a.name}</div>
@@ -52,7 +52,7 @@ export default function Gifts() {
                 border: "1px solid var(--gold)",
                 color: "var(--gold)",
                 padding: "10px 14px",
-                fontSize: "0.55rem",
+                fontSize: "0.65rem",
                 letterSpacing: "0.3em",
                 cursor: "pointer",
                 whiteSpace: "nowrap",
@@ -60,6 +60,54 @@ export default function Gifts() {
             </div>
           ))}
         </div>
+
+        {/* Delivery address */}
+        <div style={{ height: 36 }} />
+        <Hairline color="var(--gold)" width={28} />
+        <div style={{ height: 20 }} />
+        <BodyItalic color="var(--gold)" size="0.88rem" style={{ opacity: 0.7 }}>
+          Or send a gift to our home
+        </BodyItalic>
+        <div style={{ height: 16 }} />
+        <div style={{
+          border: "1px solid rgba(197,185,154,0.35)",
+          padding: "20px 26px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 16,
+          textAlign: "left",
+          maxWidth: 480,
+          margin: "0 auto",
+        }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontFamily: "var(--font-body)", fontSize: "1rem", color: "var(--cream)" }}>
+              {site.giftAddress.name}
+            </div>
+            <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.88rem", color: "var(--gold)", opacity: 0.85, marginTop: 4 }}>
+              {site.giftAddress.street}
+            </div>
+            <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.88rem", color: "var(--gold)", opacity: 0.85 }}>
+              {site.giftAddress.city}, {site.giftAddress.province} {site.giftAddress.postalCode}
+            </div>
+          </div>
+          <button
+            onClick={() => copy(`${site.giftAddress.name}, ${site.giftAddress.street}, ${site.giftAddress.city}, ${site.giftAddress.province} ${site.giftAddress.postalCode}`)}
+            style={{
+              background: "transparent",
+              border: "1px solid var(--gold)",
+              color: "var(--gold)",
+              padding: "10px 14px",
+              fontSize: "0.55rem",
+              letterSpacing: "0.3em",
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {copied === `${site.giftAddress.name}, ${site.giftAddress.street}, ${site.giftAddress.city}, ${site.giftAddress.province} ${site.giftAddress.postalCode}` ? "COPIED" : "COPY"}
+          </button>
+        </div>
+
       </div>
     </section>
   );

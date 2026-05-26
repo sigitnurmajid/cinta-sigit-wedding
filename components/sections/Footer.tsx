@@ -33,7 +33,7 @@ export default function Footer() {
         <div style={{ height: 36 }} />
         <Hairline color="var(--gold)" width={40} />
         <div style={{ height: 26 }} />
-        <Script size="clamp(2.4rem, 6vw, 3.2rem)" color="var(--cream)">{site.groom} &amp; {site.bride}</Script>
+        <Script size="clamp(2.4rem, 6vw, 3.2rem)" color="var(--cream)">{site.bride} &amp; {site.groom}</Script>
         <div style={{ height: 8 }} />
         <Eyebrow color="var(--gold)">{dateLong}</Eyebrow>
       </div>

@@ -20,7 +20,7 @@ type FormData = z.infer<typeof schema>;
 const labelStyle: React.CSSProperties = {
   fontFamily: "var(--font-ui)",
   fontWeight: 300,
-  fontSize: "0.6rem",
+  fontSize: "0.72rem",
   letterSpacing: "0.32em",
   textTransform: "uppercase",
   color: "var(--olive)",
@@ -85,7 +85,7 @@ export default function RSVPForm() {
       <div style={{ marginBottom: 22 }}>
         <label style={labelStyle}>Your Name</label>
         <input {...register("name")} placeholder="As we know you" style={inputStyle} />
-        {errors.name && <span style={{ color: "#9b3e2a", fontSize: 12 }}>{errors.name.message}</span>}
+        {errors.name && <span style={{ color: "#9b3e2a", fontSize: 13 }}>{errors.name.message}</span>}
       </div>
 
       <div style={{ marginBottom: 22 }}>
@@ -112,12 +112,12 @@ export default function RSVPForm() {
             }}>
               <div style={{ fontFamily: "var(--font-display)", fontSize: "0.85rem", letterSpacing: "0.18em" }}>{opt.label.toUpperCase()}</div>
               <div style={{ height: 4 }} />
-              <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.78rem", opacity: 0.75 }}>{opt.sub}</div>
+              <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.88rem", opacity: 0.75 }}>{opt.sub}</div>
             </button>
           );
         })}
       </div>
-      {errors.attending && <div style={{ color: "#9b3e2a", fontSize: 12, marginBottom: 16 }}>{errors.attending.message}</div>}
+      {errors.attending && <div style={{ color: "#9b3e2a", fontSize: 13, marginBottom: 16 }}>{errors.attending.message}</div>}
 
       {attending === "yes" && (
         <>
@@ -154,7 +154,7 @@ export default function RSVPForm() {
         background: "var(--ink)", color: "var(--cream)",
         border: "none", padding: "18px",
         fontFamily: "var(--font-ui)",
-        fontSize: "0.68rem", letterSpacing: "0.5em",
+        fontSize: "0.75rem", letterSpacing: "0.5em",
         cursor: isSubmitting ? "wait" : "pointer",
         opacity: isSubmitting ? 0.6 : 1,
       }}>
