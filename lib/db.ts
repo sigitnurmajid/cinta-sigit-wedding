@@ -73,9 +73,11 @@ function db(): Database.Database {
 
 // ── Writes ───────────────────────────────────────────────────────────
 export function insertRsvp(data: RsvpInput): number {
+  // approved = 1 → wishes appear publicly as soon as they're submitted
+  // (no moderation step). The dashboard can still unapprove/delete later.
   const stmt = db().prepare(`
-    INSERT INTO rsvps (name, contact, attending, guests, session, dietary, wish)
-    VALUES (@name, @contact, @attending, @guests, @session, @dietary, @wish)
+    INSERT INTO rsvps (name, contact, attending, guests, session, dietary, wish, approved)
+    VALUES (@name, @contact, @attending, @guests, @session, @dietary, @wish, 1)
   `);
   const info = stmt.run({
     name: data.name,
