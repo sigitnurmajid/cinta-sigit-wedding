@@ -1,7 +1,8 @@
 "use client";
 import { site } from "@/content/site";
 import RSVPForm from "@/components/RSVPForm";
-import { Eyebrow, Script, SerifCaps, BodyText, BodyItalic, Hairline, Fact } from "@/components/atoms";
+import Wishes from "@/components/sections/Wishes";
+import { Eyebrow, Script, BodyText, Hairline, Fact } from "@/components/atoms";
 
 export default function RSVPSection() {
   return (
@@ -41,24 +42,8 @@ export default function RSVPSection() {
         </div>
       </section>
 
-      {/* Wishes */}
-      <section className="section section--cream2">
-        <div style={{ textAlign: "center", marginBottom: 36 }}>
-          <Eyebrow color="var(--olive)">From those before you</Eyebrow>
-          <div style={{ height: 14 }} />
-          <Script size="clamp(2.6rem, 7vw, 3.4rem)" color="var(--ink)">Wishes &amp; Prayers</Script>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 18, maxWidth: 880, margin: "0 auto" }}>
-          {site.wishes.map((w, i) => (
-            <div key={i} style={{ padding: "28px", background: "var(--off)", border: "1px solid rgba(107,122,74,0.2)" }}>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: "1.6rem", color: "var(--gold)", lineHeight: 0.5, marginBottom: 4 }}>&ldquo;</div>
-              <BodyItalic size="1.05rem">{w.note}</BodyItalic>
-              <div style={{ height: 14 }} />
-              <SerifCaps size="0.8rem" tracking="0.22em" color="var(--olive)">— {w.name}</SerifCaps>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Wishes — live, moderated, paginated */}
+      <Wishes />
     </div>
   );
 }

@@ -5,12 +5,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Eyebrow, Script, BodyText } from "@/components/atoms";
 
+// Treat empty form fields ("") as "not provided" so optional fields don't
+// fail validation (empty <select> value, blank guests input, etc.).
+const emptyToUndefined = (v: unknown) => (v === "" || v == null ? undefined : v);
+
 const schema = z.object({
   name: z.string().min(2, "Please share your name"),
-  contact: z.string().min(5, "An email or phone number please"),
+  contact: z.preprocess(emptyToUndefined, z.string().min(5, "An email or phone number please").optional()),
   attending: z.enum(["yes", "no"], { required_error: "Please choose one" }),
-  guests: z.coerce.number().min(1).max(4).optional(),
-  session: z.enum(["akad", "resepsi", "both"]).optional(),
+  guests: z.preprocess(emptyToUndefined, z.coerce.number().min(1).max(4).optional()),
+  session: z.preprocess(emptyToUndefined, z.enum(["akad", "resepsi", "both"]).optional()),
   dietary: z.string().max(200).optional(),
   wish: z.string().max(500).optional(),
 });

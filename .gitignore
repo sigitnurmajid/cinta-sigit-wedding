@@ -2,8 +2,13 @@
 node_modules/
 out/
 .env*.local
+.env
+!.env.example
 .DS_Store
 *.log
 .vercel
 .turbo
 next-env.d.ts
+
+# SQLite database (RSVP data) — lives on the server's persistent disk
+/data
