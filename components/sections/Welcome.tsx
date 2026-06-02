@@ -1,4 +1,4 @@
-import { Eyebrow, Script, BodyItalic, Hairline, Botanical } from "@/components/atoms";
+import { Eyebrow, Script, BodyText, Hairline, Botanical } from "@/components/atoms";
 
 export default function Welcome() {
   return (
@@ -12,13 +12,13 @@ export default function Welcome() {
       <div style={{ maxWidth: 620, margin: "0 auto", position: "relative" }}>
         <Eyebrow color="var(--olive)">A warm welcome</Eyebrow>
         <div style={{ height: 28 }} />
-        <Script size="clamp(3.6rem, 8vw, 5rem)" color="var(--ink)">You Are Invited</Script>
+        <Script size="clamp(3.2rem, 8vw, 3.8rem)" color="var(--ink)">You Are Invited</Script>
         <div style={{ height: 22 }} />
         <Hairline color="var(--gold)" width={50} />
         <div style={{ height: 32 }} />
-        <BodyItalic size="1.12rem">With hearts full of joy and gratitude to the One above, we invite you to share in the most sacred chapter of our story — the day two souls become one.</BodyItalic>
+        <BodyText size="1rem">With hearts full of joy and gratitude to the One above, we invite you to share in the most sacred chapter of our story — the day two souls become one.</BodyText>
         <div style={{ height: 22 }} />
-        <BodyItalic size="1.12rem">A countryside afternoon, candlelight, and the quiet promise of forever. Among the people we love most, we cannot imagine this moment without you beside us.</BodyItalic>
+        <BodyText size="1rem">A countryside afternoon, candlelight, and the quiet promise of forever. Among the people we love most, we cannot imagine this moment without you beside us.</BodyText>
       </div>
     </section>
   );

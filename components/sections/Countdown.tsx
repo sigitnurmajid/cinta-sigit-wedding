@@ -1,7 +1,7 @@
 "use client";
 import { useCountdown } from "@/hooks/useCountdown";
 import { site } from "@/content/site";
-import { Eyebrow, Script, BodyItalic } from "@/components/atoms";
+import { Eyebrow, Script, BodyText } from "@/components/atoms";
 
 function Cell({ n, label }: { n: number; label: string }) {
   return (
@@ -10,13 +10,13 @@ function Cell({ n, label }: { n: number; label: string }) {
         suppressHydrationWarning
         style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(1.5rem, 5.5vw, 3.6rem)",
-          color: "var(--cream)",
+          fontSize: "clamp(1.9rem, 6vw, 3.6rem)",
+          color: "var(--on-dark)",
           lineHeight: 1,
           fontVariantNumeric: "tabular-nums",
         }}
       >{String(n).padStart(2, "0")}</div>
-      <div style={{ marginTop: 12 }}><Eyebrow color="var(--gold)">{label}</Eyebrow></div>
+      <div style={{ marginTop: 12 }}><Eyebrow color="var(--on-dark-soft)">{label}</Eyebrow></div>
     </div>
   );
 }
@@ -30,7 +30,7 @@ export default function Countdown() {
         <div style={{ height: 22 }} />
         <Script size="clamp(3.4rem, 8vw, 4.6rem)" color="var(--cream)">{done ? "The Day Has Come" : "Until Forever"}</Script>
         <div style={{ height: 14 }} />
-        <BodyItalic color="var(--gold)" style={{ opacity: 0.85 }}>The hours that remain before our two paths become one.</BodyItalic>
+        <BodyText size="1rem" color="var(--on-dark-soft)" style={{ textAlign: "center" }}>The hours that remain before our two paths become one.</BodyText>
         <div style={{ height: 50 }} />
         <div style={{
           display: "flex",

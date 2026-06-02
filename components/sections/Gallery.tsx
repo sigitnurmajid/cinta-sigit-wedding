@@ -84,12 +84,13 @@ export default function Gallery() {
                 <div style={{
                   position: "absolute",
                   bottom: 0, left: 0, right: 0,
-                  padding: "32px 16px 12px",
-                  background: "linear-gradient(to top, rgba(44,40,23,0.65) 0%, transparent 100%)",
+                  padding: "36px 16px 14px",
+                  background: "linear-gradient(to top, rgba(28,24,18,0.85) 0%, transparent 100%)",
                   fontFamily: "var(--font-body)",
                   fontStyle: "italic",
-                  fontSize: "0.88rem",
-                  color: "var(--cream)",
+                  fontWeight: 500,
+                  fontSize: "1rem",
+                  color: "var(--on-dark)",
                   letterSpacing: "0.03em",
                   textAlign: "center",
                   pointerEvents: "none",
@@ -174,9 +175,10 @@ export default function Gallery() {
             {/* ✕ Close */}
             <button onClick={close} aria-label="Close" style={{
               position: "fixed", top: 20, right: 24, zIndex: 202,
-              background: "transparent", border: "1px solid rgba(197,185,154,0.4)",
-              color: "var(--gold)", width: 40, height: 40,
-              fontSize: "1.2rem", cursor: "pointer",
+              background: "rgba(28,24,18,0.72)", border: "1px solid rgba(197,185,154,0.6)",
+              backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
+              color: "var(--on-dark)", width: 48, height: 48, borderRadius: "50%",
+              fontSize: "1.3rem", lineHeight: 1, cursor: "pointer",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}>✕</button>
 
@@ -185,9 +187,10 @@ export default function Gallery() {
               <button onClick={e => { e.stopPropagation(); prev(); }} aria-label="Previous" style={{
                 position: "fixed", left: "clamp(8px, 3vw, 28px)", top: "50%",
                 transform: "translateY(-50%)", zIndex: 202,
-                background: "transparent", border: "1px solid rgba(197,185,154,0.35)",
-                color: "var(--gold)", width: 44, height: 44,
-                fontSize: "1.1rem", cursor: "pointer",
+                background: "rgba(28,24,18,0.72)", border: "1px solid rgba(197,185,154,0.6)",
+                backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
+                color: "var(--on-dark)", width: 48, height: 48, borderRadius: "50%",
+                fontSize: "1.5rem", lineHeight: 1, cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>‹</button>
             )}
@@ -197,9 +200,10 @@ export default function Gallery() {
               <button onClick={e => { e.stopPropagation(); next(); }} aria-label="Next" style={{
                 position: "fixed", right: "clamp(8px, 3vw, 28px)", top: "50%",
                 transform: "translateY(-50%)", zIndex: 202,
-                background: "transparent", border: "1px solid rgba(197,185,154,0.35)",
-                color: "var(--gold)", width: 44, height: 44,
-                fontSize: "1.1rem", cursor: "pointer",
+                background: "rgba(28,24,18,0.72)", border: "1px solid rgba(197,185,154,0.6)",
+                backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
+                color: "var(--on-dark)", width: 48, height: 48, borderRadius: "50%",
+                fontSize: "1.5rem", lineHeight: 1, cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>›</button>
             )}

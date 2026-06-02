@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { Eyebrow, Script, SerifCaps, BodyItalic } from "@/components/atoms";
+import { Eyebrow, Script, SerifCaps, Fact } from "@/components/atoms";
 import { site } from "@/content/site";
 import { formatLongDate } from "@/lib/format";
 
@@ -83,7 +83,7 @@ export default function Hero({ shouldPlay = false }: { shouldPlay?: boolean }) {
       {/* Dark gradient overlay */}
       <div style={{
         position: "absolute", inset: 0,
-        background: "linear-gradient(180deg, rgba(20,18,12,0.45) 0%, rgba(20,18,12,0.1) 35%, rgba(20,18,12,0.15) 65%, rgba(20,18,12,0.7) 100%)",
+        background: "linear-gradient(180deg, rgba(20,18,12,0.5) 0%, rgba(20,18,12,0.18) 38%, rgba(20,18,12,0.35) 70%, rgba(20,18,12,0.88) 100%)",
       }} />
 
       {/* Hero content */}
@@ -106,14 +106,17 @@ export default function Hero({ shouldPlay = false }: { shouldPlay?: boolean }) {
         <Script size="clamp(4.6rem, 12vw, 7.2rem)" color="var(--cream)">{site.groom}</Script>
       </div>
 
-      {/* Date + location labels */}
-      <div className="hero-label-date" style={{ position: "absolute", bottom: 40, left: 28, zIndex: 3 }}>
-        <Eyebrow color="var(--gold)">Save the Date</Eyebrow>
-        <BodyItalic size="1rem" color="var(--cream)" style={{ marginTop: 4 }}>{dateLong}</BodyItalic>
-      </div>
-      <div className="hero-label-location" style={{ position: "absolute", bottom: 40, right: 28, zIndex: 3, textAlign: "right" }}>
-        <Eyebrow color="var(--gold)">Location</Eyebrow>
-        <BodyItalic size="1rem" color="var(--cream)" style={{ marginTop: 4 }}>{site.venue.city}</BodyItalic>
+      {/* Date + location — centered, readable on every breakpoint */}
+      <div style={{
+        position: "absolute", bottom: 36, left: 0, right: 0, zIndex: 3,
+        display: "flex", flexDirection: "column", alignItems: "center",
+        textAlign: "center", padding: "0 24px",
+      }}>
+        {/* <Eyebrow color="var(--on-dark-soft)">Save the Date</Eyebrow> */}
+        <div style={{ height: 8 }} />
+        <Fact color="var(--on-dark)">{dateLong}</Fact>
+        <div style={{ height: 8 }} />
+        {/* <SerifCaps size="0.85rem" tracking="0.3em" color="var(--on-dark-soft)">{site.venue.name} · {site.venue.city}</SerifCaps> */}
       </div>
 
       {/* Sound toggle — only shown after video starts */}

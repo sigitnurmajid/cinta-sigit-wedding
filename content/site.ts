@@ -4,9 +4,9 @@ export const site = {
   groom: "Sigit",
   bride: "Cinta",
   weddingDate: "2026-06-21T09:00:00+07:00",
-  rsvpDeadline: "2026-05-21",
+  rsvpDeadline: "2026-06-21",
   venue: {
-    name: "Gedung Heroes",
+    name: "Gedung Heroe. S",
     city: "Bandung Barat",
     mapUrl: "https://maps.google.com/?q=Gedung+Heroes+Bandung",
   },
@@ -24,16 +24,17 @@ export const site = {
     postalCode: "40552",
   },
   schedule: [
-    { time: "08:00", title: "Akad Nikah", desc: "The sacred ceremony, attended by close family and dear friends" },
-    { time: "10:00", title: "Guests Arrive", desc: "Morning tea, refreshments, and welcome music in the verandah" },
-    { time: "11:00", title: "Resepsi", desc: "A celebration of love with family and friends in the courtyard" },
-    { time: "14:00", title: "Farewell", desc: "Our heartfelt thanks as we begin our new journey together" },
+    { time: "08:00", title: "Marriage Ceremony — Sundanese Tradition", desc: "We exchange our vows in the sacred akad nikah, held in the Sundanese tradition and witnessed by our closest family and dearest friends." },
+    { time: "10:30", title: "Guests Arrive", desc: "Our guests are warmly welcomed with morning tea, light refreshments, and gentle live music." },
+    { time: "11:00", title: "Reception — Palembang Tradition", desc: "We celebrate our union in the Palembang tradition, sharing the joy of the day with family and friends." },
+    { time: "11:15", title: "Tari Tanggai — The Bride's Dance", desc: "The bride performs the Tanggai, a graceful Palembang traditional dance offered to welcome and honour our guests." },
+    { time: "13:00 - 14.00", title: "Farewell", desc: "We offer our heartfelt thanks to everyone as we begin our new journey together." },
   ],
   memories: [
-    { date: "March 2020",    title: "First Meeting",   img: "/images/memory-1.jpg", side: "left"  as const }, // was: https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&w=600
-    { date: "December 2021", title: "Falling In Love", img: "/images/memory-2.jpg", side: "right" as const }, // was: https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&w=600
-    { date: "June 2023",     title: "Our Adventures",  img: "/images/memory-3.jpg", side: "left"  as const }, // was: https://images.pexels.com/photos/2253842/pexels-photo-2253842.jpeg?auto=compress&w=600
-    { date: "February 2025", title: "The Proposal",    img: "/images/memory-4.jpg", side: "right" as const }, // was: https://images.pexels.com/photos/1488318/pexels-photo-1488318.jpeg?auto=compress&w=600
+    { caption: "The First Yes", date: "21 June 2025",    title: "First Meeting",   img: "/images/memory-1.jpg", side: "left"  as const }, // was: https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&w=600
+    { caption: "Mancing Mania", date: "July 2025", title: "Falling In Love", img: "/images/memory-2.jpg", side: "right" as const }, // was: https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&w=600
+    { caption: "Dufannnnnn", date: "October 2025",     title: "Our Adventures",  img: "/images/memory-3.jpg", side: "left"  as const }, // was: https://images.pexels.com/photos/2253842/pexels-photo-2253842.jpeg?auto=compress&w=600
+    { caption: "The Best Yes In Our Life", date: "20 December 2025", title: "The Proposal",    img: "/images/memory-4.jpg", side: "right" as const }, // was: https://images.pexels.com/photos/1488318/pexels-photo-1488318.jpeg?auto=compress&w=600
   ],
   faq: [
     { q: "Is there a dress code for guests?", a: "We kindly invite our guests in formal or semi-formal attire — earth tones and pastels are most welcome. Please refrain from pure white and stark black." },

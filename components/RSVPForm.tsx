@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Eyebrow, Script, BodyItalic } from "@/components/atoms";
+import { Eyebrow, Script, BodyText } from "@/components/atoms";
 
 const schema = z.object({
   name: z.string().min(2, "Please share your name"),
@@ -19,12 +19,12 @@ type FormData = z.infer<typeof schema>;
 
 const labelStyle: React.CSSProperties = {
   fontFamily: "var(--font-ui)",
-  fontWeight: 300,
-  fontSize: "0.72rem",
-  letterSpacing: "0.32em",
+  fontWeight: 400,
+  fontSize: "0.8rem",
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
   color: "var(--olive)",
-  marginBottom: 8,
+  marginBottom: 10,
   display: "block",
 };
 
@@ -35,10 +35,17 @@ const inputStyle: React.CSSProperties = {
   border: "1px solid rgba(107,122,74,0.3)",
   borderRadius: 0,
   fontFamily: "var(--font-body)",
-  fontStyle: "italic",
-  fontSize: "1rem",
+  fontWeight: 500,
+  fontSize: "1rem", /* 16px — prevents iOS zoom on focus */
   color: "var(--ink)",
   outline: "none",
+};
+
+const errorStyle: React.CSSProperties = {
+  color: "#8a2f1d", /* darkened red — AA on cream */
+  fontSize: "0.8rem",
+  display: "block",
+  marginTop: 6,
 };
 
 export default function RSVPForm() {
@@ -69,9 +76,9 @@ export default function RSVPForm() {
         <div style={{ height: 18 }} />
         <Script size="3rem" color="var(--ink)">Thank You</Script>
         <div style={{ height: 22 }} />
-        <BodyItalic size="1.05rem">
+        <BodyText style={{ textAlign: "center" }}>
           Your reply is safely with us. We will hold a place for you with care — and look forward to seeing you in June.
-        </BodyItalic>
+        </BodyText>
       </div>
     );
   }
@@ -85,14 +92,14 @@ export default function RSVPForm() {
       <div style={{ marginBottom: 22 }}>
         <label style={labelStyle}>Your Name</label>
         <input {...register("name")} placeholder="As we know you" style={inputStyle} />
-        {errors.name && <span style={{ color: "#9b3e2a", fontSize: 13 }}>{errors.name.message}</span>}
+        {errors.name && <span style={errorStyle}>{errors.name.message}</span>}
       </div>
 
-      <div style={{ marginBottom: 22 }}>
+      {/* <div style={{ marginBottom: 22 }}>
         <label style={labelStyle}>Email or WhatsApp</label>
         <input {...register("contact")} placeholder="So we may reach you" style={inputStyle} />
-        {errors.contact && <span style={{ color: "#9b3e2a", fontSize: 12 }}>{errors.contact.message}</span>}
-      </div>
+        {errors.contact && <span style={errorStyle}>{errors.contact.message}</span>}
+      </div> */}
 
       <label style={labelStyle}>Will you be joining us?</label>
       <div className="rsvp-attend-grid">
@@ -110,14 +117,14 @@ export default function RSVPForm() {
               cursor: "pointer",
               textAlign: "center",
             }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: "0.85rem", letterSpacing: "0.18em" }}>{opt.label.toUpperCase()}</div>
-              <div style={{ height: 4 }} />
-              <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.88rem", opacity: 0.75 }}>{opt.sub}</div>
+              <div style={{ fontWeight: 600, fontFamily: "var(--font-display)", fontSize: "0.95rem", letterSpacing: "0.16em" }}>{opt.label.toUpperCase()}</div>
+              <div style={{ height: 6 }} />
+              <div style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.95rem", opacity: 0.85 }}>{opt.sub}</div>
             </button>
           );
         })}
       </div>
-      {errors.attending && <div style={{ color: "#9b3e2a", fontSize: 13, marginBottom: 16 }}>{errors.attending.message}</div>}
+      {errors.attending && <div style={{ ...errorStyle, marginBottom: 16 }}>{errors.attending.message}</div>}
 
       {attending === "yes" && (
         <>
@@ -136,11 +143,6 @@ export default function RSVPForm() {
               </select>
             </div>
           </div>
-
-          <div style={{ marginBottom: 22 }}>
-            <label style={labelStyle}>Dietary Notes</label>
-            <input {...register("dietary")} placeholder="Allergies, preferences (optional)" style={inputStyle} />
-          </div>
         </>
       )}
 
@@ -154,7 +156,8 @@ export default function RSVPForm() {
         background: "var(--ink)", color: "var(--cream)",
         border: "none", padding: "18px",
         fontFamily: "var(--font-ui)",
-        fontSize: "0.75rem", letterSpacing: "0.5em",
+        fontWeight: 500,
+        fontSize: "var(--fs-button)", letterSpacing: "0.22em",
         cursor: isSubmitting ? "wait" : "pointer",
         opacity: isSubmitting ? 0.6 : 1,
       }}>

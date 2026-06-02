@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { site } from "@/content/site";
 import { formatLongDate } from "@/lib/format";
-import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline, HeartMonogram } from "@/components/atoms";
+import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline } from "@/components/atoms";
 
 export default function SplashScreen({ onEnter }: { onEnter: () => void }) {
   const [visible, setVisible] = useState(true);
@@ -52,7 +52,11 @@ export default function SplashScreen({ onEnter }: { onEnter: () => void }) {
         color: "var(--cream)",
       }}
     >
-      <HeartMonogram color="var(--gold)" size={72} />
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 5, color: "var(--gold)", lineHeight: 1 }}>
+        <span style={{ fontFamily: "var(--font-script)", fontSize: "clamp(2rem, 6vw, 2.8rem)" }}>C</span>
+        <span style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "clamp(0.85rem, 2vw, 1.1rem)" }}>&amp;</span>
+        <span style={{ fontFamily: "var(--font-script)", fontSize: "clamp(2rem, 6vw, 2.8rem)" }}>S</span>
+      </div>
       <div style={{ height: 32 }} />
       <Eyebrow color="var(--gold)">The Wedding of</Eyebrow>
       <div style={{ height: 22 }} />

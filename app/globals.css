@@ -8,18 +8,41 @@
   --cream-2: #E5DED1;
   --off: #F5F2EC;
   --ink: #2C2817;
-  --ink-soft: #4A4235;
-  --olive: #6B7A4A;
-  --gold: #C5B99A;
+  --ink-soft: #3F3829; /* darkened from #4A4235 for stronger body contrast on cream */
+  --olive: #5C6B3E;    /* darkened from #6B7A4A so olive labels/links meet AA on cream */
+  --gold: #C5B99A;     /* accent only: rules, borders, large decorative type */
+
+  /* Readable light-on-dark text colors (replace gold for body/data on dark bgs) */
+  --on-dark: #F0E9DA;       /* primary text on --ink / photos — high contrast */
+  --on-dark-soft: #DAD0BC;  /* secondary text on dark — still AA for normal text */
 
   /* Type families (mirrors next/font CSS variables — see app/layout.tsx) */
   --font-script: var(--font-pinyon), cursive;
   --font-display: var(--font-italiana), serif;
   --font-body: var(--font-cormorant), serif;
   --font-ui: var(--font-inter), system-ui, sans-serif;
+
+  /* ---- Fluid type scale (mobile min → desktop max) ---- */
+  --fs-script:    clamp(3.4rem, 11vw, 7rem);   /* couple names */
+  --fs-heading:   clamp(2rem, 6vw, 3rem);      /* section titles */
+  --fs-fact:      clamp(1.25rem, 4vw, 1.75rem);/* date/time/venue/account values */
+  --fs-body:      clamp(1.125rem, 2.6vw, 1.25rem);
+  --fs-secondary: clamp(1rem, 2.2vw, 1.05rem);
+  --fs-label:     0.8rem;                       /* eyebrows / form labels — never smaller */
+  --fs-button:    clamp(0.85rem, 2vw, 0.9rem);
+
+  /* Reading rhythm */
+  --lh-body: 1.7;
+  --lh-heading: 1.2;
+  --measure: 62ch;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Global type scale-up — every rem-based size grows with this.
+     ~18px on small phones → ~21px on large desktop (default was 16px). */
+  font-size: clamp(18px, 16px + 0.6vw, 21px);
+}
 
 * { box-sizing: border-box; }
 
@@ -237,9 +260,10 @@ body.splash-open nav {
   .timeline-time {
     width: auto;
     text-align: left;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
     font-family: var(--font-ui);
-    letter-spacing: 0.3em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--olive);
     padding-top: 0;
@@ -423,6 +447,10 @@ body.splash-open nav {
 .gallery-marquee:hover {
   animation-play-state: paused;
 }
+@media (prefers-reduced-motion: reduce) {
+  .gallery-marquee { animation: none; }
+  html { scroll-behavior: auto; }
+}
 
 .gallery-marquee__item {
   flex-shrink: 0;
@@ -511,12 +539,3 @@ body.splash-open nav {
   }
 }
 
-/* ---- Hero bottom labels ---- */
-@media (max-width: 479px) {
-  .hero-label-date { display: none; }
-  .hero-label-location {
-    left: 28px !important;
-    right: 28px !important;
-    text-align: left !important;
-  }
-}

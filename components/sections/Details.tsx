@@ -1,5 +1,5 @@
 import { site } from "@/content/site";
-import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline } from "@/components/atoms";
+import { Eyebrow, Script, SerifCaps, BodyText, BodyItalic, Hairline, Fact } from "@/components/atoms";
 
 const swatches = [
   { hex: "#EDE8DF", name: "Cream" },
@@ -28,16 +28,17 @@ export default function Details() {
           <div style={{ height: 18 }} />
           <Hairline color="var(--gold)" width={50} />
           <div style={{ height: 24 }} />
-          <BodyItalic size="1.1rem">One long, slow day — built for stillness, for laughter, and for the small joys of being together. Below is the rhythm of our celebration.</BodyItalic>
+          <BodyText>One long, slow day — built for stillness, for laughter, and for the small joys of being together. Below is the rhythm of our celebration.</BodyText>
         </div>
       </section>
 
-      {/* Date */}
+      {/* Date — critical fact, upright & high-contrast */}
       <section className="section section--cream" style={{ textAlign: "center" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <Eyebrow color="var(--olive)">Saturday</Eyebrow>
           <div style={{ height: 16 }} />
-          <Script size="clamp(3.6rem, 9vw, 5rem)" color="var(--ink)">21 June 2026</Script>
+          <Fact size="clamp(2.4rem, 7vw, 3.6rem)" style={{ justifyContent: "center", fontVariantNumeric: "lining-nums tabular-nums" }}>21 JUNE 2026</Fact>
+          <div style={{ height: 14 }} />
         </div>
       </section>
 
@@ -50,9 +51,9 @@ export default function Details() {
               <div className="timeline-time">{item.time}</div>
               <div className="timeline-dot" aria-hidden />
               <div style={{ flex: 1 }}>
-                <SerifCaps size="1.05rem" tracking="0.2em" color="var(--ink)">{item.title}</SerifCaps>
+                <SerifCaps style={{ fontWeight: 700 }} size="1.05rem" tracking="0.2em" color="var(--ink)">{item.title}</SerifCaps>
                 <div style={{ height: 6 }} />
-                <BodyItalic size="0.95rem">{item.desc}</BodyItalic>
+                <BodyText size="var(--fs-secondary)" style={{ maxWidth: "none", margin: 0}}>{item.desc}</BodyText>
               </div>
             </div>
           ))}

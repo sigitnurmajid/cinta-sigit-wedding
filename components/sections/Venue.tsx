@@ -1,9 +1,9 @@
 import { site } from "@/content/site";
-import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline } from "@/components/atoms";
+import { Eyebrow, Script, SerifCaps, Hairline, Fact } from "@/components/atoms";
 
 const ceremonies = [
-  { kicker: "Ceremony", name: "Akad Nikah", time: "08:00 — 10:00 WIB", place: "The Garden Hall" },
-  { kicker: "Reception", name: "Resepsi", time: "11:00 — 14:00 WIB", place: "The Lantern Courtyard" },
+  { kicker: "Ceremony", name: "Akad Nikah", time: "08:00 — 10:00 WIB"},
+  { kicker: "Reception", name: "Resepsi", time: "11:00 — 14:00 WIB"},
 ];
 
 export default function Venue() {
@@ -17,8 +17,10 @@ export default function Venue() {
           <Script size="clamp(3.4rem, 8vw, 4.8rem)" color="var(--cream)">Our Venue</Script>
           <div style={{ height: 18 }} />
           <Hairline color="var(--gold)" width={44} />
-          <div style={{ height: 22 }} />
-          <SerifCaps size="0.85rem" tracking="0.35em" color="var(--gold)">{site.venue.name} · {site.venue.city}</SerifCaps>
+          <div style={{ height: 24 }} />
+          <Fact color="var(--on-dark)" style={{ textAlign: "center"}} >{site.venue.name}</Fact>
+          <div style={{ height: 8 }} />
+          <SerifCaps size="0.85rem" tracking="0.3em" color="var(--on-dark-soft)" style={{ fontWeight: 700 }}>{site.venue.city}</SerifCaps>
         </div>
       </section>
 
@@ -33,9 +35,8 @@ export default function Venue() {
               <div style={{ height: 16 }} />
               <Hairline color="var(--gold)" width={28} />
               <div style={{ height: 18 }} />
-              <SerifCaps size="0.78rem" tracking="0.32em" color="var(--ink-soft)">{c.time}</SerifCaps>
+              <Fact size="1.25rem" style={{ textAlign: "center" }}>{c.time}</Fact>
               <div style={{ height: 8 }} />
-              <BodyItalic size="0.95rem">{c.place}</BodyItalic>
             </div>
           ))}
         </div>
@@ -61,12 +62,25 @@ export default function Venue() {
               title="Venue location — Gedung Heroes, Bandung Barat"
             />
           </div>
-          <div style={{ textAlign: "center", marginTop: 18 }}>
+          <div style={{ textAlign: "center", marginTop: 28 }}>
             <a
               href={site.venue.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: "var(--font-ui)", fontSize: "0.75rem", letterSpacing: "0.25em", color: "var(--olive)", textTransform: "uppercase", textDecoration: "none", borderBottom: "1px solid var(--gold)", paddingBottom: 2 }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                minHeight: 48,
+                padding: "0 28px",
+                background: "var(--olive)",
+                color: "var(--off)",
+                fontFamily: "var(--font-ui)",
+                fontWeight: 500,
+                fontSize: "var(--fs-button)",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
             >
               Open in Google Maps ↗
             </a>

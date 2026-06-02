@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { site } from "@/content/site";
-import { Eyebrow, Script, SerifCaps, BodyItalic, Hairline, Botanical } from "@/components/atoms";
+import { Eyebrow, Script, SerifCaps, BodyText, Hairline, Botanical, Fact } from "@/components/atoms";
 
 export default function Gifts() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -26,9 +26,9 @@ export default function Gifts() {
         <div style={{ height: 24 }} />
         <Hairline color="var(--gold)" width={50} />
         <div style={{ height: 28 }} />
-        <BodyItalic color="var(--gold)" size="1.1rem" style={{ opacity: 0.9 }}>
+        <BodyText color="var(--on-dark)">
           Your love and presence are blessing enough. For those who wish to give beyond their hearts, we humbly leave the following details — with deepest thanks.
-        </BodyItalic>
+        </BodyText>
         <div style={{ height: 50 }} />
         <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 480, margin: "0 auto" }}>
           {site.bankAccounts.map((a, i) => (
@@ -42,18 +42,21 @@ export default function Gifts() {
               textAlign: "left",
             }}>
               <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: "0.78rem", letterSpacing: "0.3em", color: "var(--gold)" }}>{a.bank}</div>
-                <div style={{ height: 6 }} />
-                <div style={{ fontFamily: "var(--font-body)", fontSize: "1.15rem", color: "var(--cream)", fontVariantNumeric: "tabular-nums" }}>{a.number}</div>
-                <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.85rem", color: "var(--gold)", opacity: 0.8 }}>{a.name}</div>
+                <div style={{ fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: "0.8rem", letterSpacing: "0.22em", color: "var(--on-dark-soft)", textTransform: "uppercase" }}>{a.bank}</div>
+                <div style={{ height: 8 }} />
+                <Fact size="1.4rem" color="var(--on-dark)" style={{ letterSpacing: "0.04em" }}>{a.number}</Fact>
+                <div style={{ height: 4 }} />
+                <div style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.95rem", color: "var(--on-dark-soft)" }}>{a.name}</div>
               </div>
               <button onClick={() => copy(a.number)} style={{
                 background: "transparent",
                 border: "1px solid var(--gold)",
-                color: "var(--gold)",
-                padding: "10px 14px",
-                fontSize: "0.65rem",
-                letterSpacing: "0.3em",
+                color: "var(--on-dark)",
+                padding: "12px 16px",
+                minHeight: 44,
+                fontFamily: "var(--font-ui)",
+                fontSize: "0.72rem",
+                letterSpacing: "0.22em",
                 cursor: "pointer",
                 whiteSpace: "nowrap",
               }}>{copied === a.number ? "COPIED" : "COPY"}</button>
@@ -65,9 +68,7 @@ export default function Gifts() {
         <div style={{ height: 36 }} />
         <Hairline color="var(--gold)" width={28} />
         <div style={{ height: 20 }} />
-        <BodyItalic color="var(--gold)" size="0.88rem" style={{ opacity: 0.7 }}>
-          Or send a gift to our home
-        </BodyItalic>
+        <Eyebrow color="var(--on-dark-soft)">Or send a gift to our home</Eyebrow>
         <div style={{ height: 16 }} />
         <div style={{
           border: "1px solid rgba(197,185,154,0.35)",
@@ -81,13 +82,13 @@ export default function Gifts() {
           margin: "0 auto",
         }}>
           <div style={{ flex: 1 }}>
-            <div style={{ fontFamily: "var(--font-body)", fontSize: "1rem", color: "var(--cream)" }}>
+            <div style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "1.1rem", color: "var(--on-dark)" }}>
               {site.giftAddress.name}
             </div>
-            <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.88rem", color: "var(--gold)", opacity: 0.85, marginTop: 4 }}>
+            <div style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", lineHeight: 1.5, color: "var(--on-dark-soft)", marginTop: 6 }}>
               {site.giftAddress.street}
             </div>
-            <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: "0.88rem", color: "var(--gold)", opacity: 0.85 }}>
+            <div style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", lineHeight: 1.5, color: "var(--on-dark-soft)" }}>
               {site.giftAddress.city}, {site.giftAddress.province} {site.giftAddress.postalCode}
             </div>
           </div>
@@ -96,10 +97,12 @@ export default function Gifts() {
             style={{
               background: "transparent",
               border: "1px solid var(--gold)",
-              color: "var(--gold)",
-              padding: "10px 14px",
-              fontSize: "0.55rem",
-              letterSpacing: "0.3em",
+              color: "var(--on-dark)",
+              padding: "12px 16px",
+              minHeight: 44,
+              fontFamily: "var(--font-ui)",
+              fontSize: "0.72rem",
+              letterSpacing: "0.22em",
               cursor: "pointer",
               whiteSpace: "nowrap",
             }}

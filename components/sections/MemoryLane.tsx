@@ -39,7 +39,7 @@ export default function MemoryLane() {
                     filter: "saturate(0.8) sepia(0.05)",
                   }} />
                   <div style={{ textAlign: "center", marginTop: 10 }}>
-                    <Script size="1.4rem" color="var(--ink)">{m.title}</Script>
+                    <Script size="1.4rem" color="var(--ink)">{m.caption}</Script>
                   </div>
                 </div>
               </div>
@@ -47,7 +47,7 @@ export default function MemoryLane() {
               <div className="memory-text-side" style={{ textAlign: isLeft ? "left" : "right", padding: isLeft ? "0 0 0 20px" : "0 20px 0 0" }}>
                 <Eyebrow color="var(--olive)">{m.date}</Eyebrow>
                 <div style={{ height: 8 }} />
-                <SerifCaps size="1.1rem" tracking="0.18em" color="var(--ink)">{m.title}</SerifCaps>
+                <SerifCaps size="1.05rem" tracking="0.18em" color="var(--ink)" style={{ fontWeight: 700 }}>{m.title}</SerifCaps>
               </div>
             </div>
           );
