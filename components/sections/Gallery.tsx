@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { site } from "@/content/site";
 import { Eyebrow, Script, Hairline } from "@/components/atoms";
@@ -71,15 +72,22 @@ export default function Gallery() {
               <div
                 className="gallery-marquee__img"
                 style={{
+                  position: "relative",
                   width: "100%",
                   height: "100%",
-                  backgroundImage: `url(${photo.src})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
                   filter: "saturate(0.88) sepia(0.06)",
                   transition: "filter 0.4s ease, transform 0.4s ease",
                 }}
-              />
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.caption ?? ""}
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  sizes="(max-width: 479px) 130px, (max-width: 767px) 160px, 220px"
+                  loading="lazy"
+                />
+              </div>
               {photo.caption && (
                 <div style={{
                   position: "absolute",

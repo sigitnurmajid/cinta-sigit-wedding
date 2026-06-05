@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 type Photo = { src: string; caption?: string };
@@ -66,16 +67,23 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
               >
                 <div
                   style={{
+                    position: "relative",
                     width: "100%",
                     height: "100%",
-                    backgroundImage: `url(${photo.src})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
                     filter: "saturate(0.88) sepia(0.08)",
                     transition: "transform 0.4s ease, filter 0.4s ease",
                   }}
                   className="gallery-item__img"
-                />
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.caption ?? ""}
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 367px"
+                    loading="lazy"
+                  />
+                </div>
                 {photo.caption && (
                   <div style={{
                     position: "absolute",

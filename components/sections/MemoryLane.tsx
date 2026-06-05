@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/content/site";
 import { Eyebrow, Script, SerifCaps } from "@/components/atoms";
 
@@ -31,13 +32,20 @@ export default function MemoryLane() {
                   width: "min(240px, 80vw)",
                 }}>
                   <div style={{
+                    position: "relative",
                     width: "100%",
                     aspectRatio: "1 / 1",
-                    backgroundImage: `url(${m.img})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "saturate(0.8) sepia(0.05)",
-                  }} />
+                    overflow: "hidden",
+                  }}>
+                    <Image
+                      src={m.img}
+                      alt={m.caption}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: "center", filter: "saturate(0.8) sepia(0.05)" }}
+                      sizes="(max-width: 479px) 80vw, 240px"
+                      loading="lazy"
+                    />
+                  </div>
                   <div style={{ textAlign: "center", marginTop: 10 }}>
                     <Script size="1.4rem" color="var(--ink)">{m.caption}</Script>
                   </div>

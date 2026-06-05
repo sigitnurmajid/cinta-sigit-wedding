@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/content/site";
 import { Eyebrow, Script, BodyText, Hairline } from "@/components/atoms";
 import { formatLongDate } from "@/lib/format";
@@ -6,12 +7,16 @@ export default function Footer() {
   const dateLong = formatLongDate(site.weddingDate);
   return (
     <section className="footer-section">
-      <div style={{
-        position: "absolute", inset: 0,
-        backgroundImage: `url(${site.images.footer})`,
-        backgroundSize: "cover", backgroundPosition: "center",
-        filter: "brightness(0.52) saturate(0.9) sepia(0.15)",
-      }} />
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+        <Image
+          src={site.images.footer}
+          alt=""
+          fill
+          style={{ objectFit: "cover", objectPosition: "center", filter: "brightness(0.52) saturate(0.9) sepia(0.15)" }}
+          sizes="100vw"
+          loading="lazy"
+        />
+      </div>
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(28,24,18,0.55), rgba(28,24,18,0.72))" }} />
       <div style={{
         position: "relative", zIndex: 2, height: "100%",
