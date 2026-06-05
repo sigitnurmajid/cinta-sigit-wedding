@@ -35,7 +35,6 @@ export default function Hero({ shouldPlay = false }: { shouldPlay?: boolean }) {
     const video = videoRef.current;
     if (!video) return;
 
-    video.load();
     video.muted = false;
     video.play()
       .then(() => setIsMuted(false))
@@ -79,7 +78,7 @@ export default function Hero({ shouldPlay = false }: { shouldPlay?: boolean }) {
           filter: "brightness(0.78) saturate(0.85)",
         }}
       >
-        {shouldPlay && <source src={site.images.heroVideo} type="video/mp4" />}
+        <source src={site.images.heroVideo} type="video/mp4" />
       </video>
 
       {/* Dark gradient overlay */}
