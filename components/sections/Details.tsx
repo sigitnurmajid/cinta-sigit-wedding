@@ -35,7 +35,7 @@ export default function Details() {
       {/* Date — critical fact, upright & high-contrast */}
       <section className="section section--cream" style={{ textAlign: "center" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <Eyebrow color="var(--olive)">Saturday</Eyebrow>
+          <Eyebrow color="var(--olive)">Sunday</Eyebrow>
           <div style={{ height: 16 }} />
           <Fact size="clamp(2.4rem, 7vw, 3.6rem)" style={{ justifyContent: "center", fontVariantNumeric: "lining-nums tabular-nums" }}>21 JUNE 2026</Fact>
           <div style={{ height: 14 }} />
