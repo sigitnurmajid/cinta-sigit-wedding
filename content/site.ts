@@ -8,7 +8,9 @@ export const site = {
   venue: {
     name: "Gedung Heroe. S",
     city: "Bandung Barat",
-    mapUrl: "https://maps.google.com/?q=Gedung+Heroes+Bandung",
+    lat: -6.8389007,
+    lng: 107.5087892,
+    mapUrl: "https://maps.app.goo.gl/zwHqaLR5Fo72pCpa6",
   },
   contactPhone: "+62 851-6175-1612",
   contactName: "Cinta",

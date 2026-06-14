@@ -52,14 +52,13 @@ export default function Venue() {
           </div>
           <div style={{ width: "100%", height: "clamp(320px, 45vw, 500px)", borderRadius: 2, overflow: "hidden", boxShadow: "0 14px 30px rgba(20,15,8,0.14)" }}>
             <iframe
-              src="https://maps.google.com/maps?q=Gedung+Heroes+Bandung+Barat&output=embed&z=15"
+              src="https://maps.google.com/maps?q=GEDUNG%20HEROE.S&t=m&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, display: "block" }}
-              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Venue location — Gedung Heroes, Bandung Barat"
+              title={`Venue location — ${site.venue.name}, ${site.venue.city}`}
             />
           </div>
           <div style={{ textAlign: "center", marginTop: 28 }}>
