@@ -3,7 +3,7 @@
 export const site = {
   groom: "Sigit",
   bride: "Cinta",
-  weddingDate: "2026-06-21T09:00:00+07:00",
+  weddingDate: "2026-06-21T00:00:00+07:00",
   rsvpDeadline: "2026-06-21",
   venue: {
     name: "Gedung Heroe. S",
